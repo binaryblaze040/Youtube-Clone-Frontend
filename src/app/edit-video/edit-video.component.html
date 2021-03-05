@@ -1,0 +1,33 @@
+<div class="container h-100 body">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <b>EDIT VIDEO</b>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form #edit="ngForm" (ngSubmit)="editVideo(edit.value)">
+                    <div class="input-group mb-3">
+                        Title : &nbsp;
+                        <input type="text" ngModel name="name" class="form-control input_user" [(ngModel)]="video.name" placeholder="Title" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        Description : &nbsp;
+                        <textarea type="text" ngModel name="description" class="form-control input_user" [(ngModel)]="video.description" rows="4" placeholder="Description"></textarea>
+                    </div>
+                    <div class="input-group mb-2">
+                        Tags : &nbsp;
+                        <input type="text" ngModel name="tags" class="form-control input_user" [(ngModel)]="video.tags" placeholder="Tags" required>
+                    </div>
+                    <div class="input-group mb-2">
+                        Youtube URL (Read Only) : &nbsp;
+                        <input type="text" ngModel name="link" class="form-control input_user" [(ngModel)]="video.link" placeholder="Youtube URL" readonly>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                        <button type="submit" class="btn login_btn">EDIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

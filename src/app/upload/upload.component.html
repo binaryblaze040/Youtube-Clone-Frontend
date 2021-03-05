@@ -1,0 +1,33 @@
+<div class="container h-100 body">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <b>UPLOAD</b>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form #upload="ngForm" (ngSubmit)="uploadVideo(upload.value)">
+                    <div class="input-group mb-3">
+                        <input type="text" ngModel name="name" class="form-control input_user" value=""
+                            placeholder="Video Title">
+                    </div>
+                    <div class="input-group mb-3">
+                        <textarea type="text" ngModel name="description" class="form-control input_user" value=""
+                            placeholder="Description" rows="4"></textarea>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" ngModel name="tags" class="form-control input_user" value="" placeholder="Tags(seperated by comma i.e. ',')">
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" ngModel name="link" class="form-control input_user" value="" placeholder="Youtube Link">
+                    </div>
+                    
+                    <p class="error-msg"><b>{{error}}</b></p>
+
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                        <button type="submit" class="btn login_btn">UPLOAD</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

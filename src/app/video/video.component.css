@@ -1,0 +1,79 @@
+.video-player {
+    padding: 40px;
+    margin: 50px;
+    width: 900px;
+    float: left;
+}
+
+.recommendation {
+    float: right;
+    padding-top: 30px;
+    margin: 50px;
+    width: 420px;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+h4 {
+    padding-left: 20px;
+    color: rgb(199, 199, 199);
+}
+
+.line {
+    display : inline-block
+}
+
+.likes {
+    float: right;
+}
+
+.channel {
+    color: floralwhite;
+    font-size: x-large;
+    color: rgb(204, 31, 0);
+}
+
+.comments-title {
+    color: floralwhite;
+    font-size: 20px;
+}
+
+.comments {
+    font-size: 15px;
+    color: floralwhite;
+}
+
+.views {
+    font-size: 17px;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    max-width: 900px;
+}
+
+.video-details {
+    color: rgb(165, 165, 165);
+    width: 900px;
+}
+
+.comment {
+    border-radius: 20px;
+    width : 800px;
+    padding: 5px;
+}
+
+.comment-label {
+    color:rgb(19, 165, 0);
+    padding-left: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.post {
+    border-radius: 5px;
+}

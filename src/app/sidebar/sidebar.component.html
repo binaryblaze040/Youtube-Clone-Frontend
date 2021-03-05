@@ -1,0 +1,17 @@
+<img class="options" width="40" (click)="toogleBar()" src="../../assets/img/options.png"> 
+<div class="container">
+    <aside *ngIf="isVisible">
+        <h3>OPTIONS  <img style="float:right;" width="30" (click)="toogleBar()" src="../../assets/img/close.png"></h3>
+        <nav>
+            <a routerLink="/" (click)="toogleBar()">HOME</a>
+            <div *ngIf="userName == ''">
+                <a routerLink="/login" (click)="toogleBar()">LOGIN</a>
+                <a routerLink="/register" (click)="toogleBar()">SIGN UP</a> 
+            </div>
+            <div *ngIf="userName != ''">
+                <a (click)="getChannel()"> {{userName}} </a>
+                <a routerLink="/" (click)="logout()"> LOG OUT </a>
+            </div>
+        </nav>
+    </aside>
+</div>

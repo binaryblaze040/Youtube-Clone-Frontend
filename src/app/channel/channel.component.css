@@ -1,0 +1,21 @@
+.body {
+    padding-top: 40px;
+    margin: 50px;
+    color: white;
+}
+
+.name {
+    color: black;
+}
+
+.upload {
+    background-color: rgb(133, 133, 133);
+    border-radius: 40px;
+    float: right;
+    height: 50px;
+    width: 180px;
+}
+
+.button {
+    padding: 50px;
+}

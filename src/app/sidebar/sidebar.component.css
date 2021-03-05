@@ -1,0 +1,61 @@
+.options {
+    top : 1.5%;
+    left : 0.5%;
+    position:fixed;
+    z-index: 100;
+}
+
+h3 {
+    margin:0;
+    color:#ddd;
+    padding:10px;
+    border-bottom:1px solid rgb(173, 0, 0);
+    text-align: center;
+}
+
+button:focus {
+    outline:none
+}
+
+aside {
+    background:#242121fa;
+    width:250px;
+    height:100vh;
+    position:fixed;
+    transition:.3s;
+    left: 0px;
+    top: 60px;
+    transition-timing-function: cubic-bezier(0.9,0,1,1);
+    z-index: 4;
+}
+
+aside.close {
+    left:0;
+    transition:.3s;
+    transition-timing-function: cubic-bezier(0.9,0,1,1);
+}
+
+nav a {
+    display: block;
+    color:#ddd;
+    text-decoration:none;
+    padding:10px;
+    text-align: center;
+}
+
+nav a:hover {
+    background:#313640;
+    color : white
+}
+
+aside button {
+    border:none;
+    background:none;
+    position: absolute;
+    right:-40px;
+    top:7px;
+    font-size:30px;
+    transform:rotate(90deg);
+    display:inline-block;
+    cursor:pointer
+}

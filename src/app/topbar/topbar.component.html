@@ -1,0 +1,21 @@
+<div class="toolbar" role="banner">
+    <img width="40">
+    <img width="35" alt="YouTube Logo" routerLink="/" src="../../assets/img/youtube-icon.png" />
+    <span class="logo-name" routerLink="/">YouTube</span>
+    
+    <div class="spacer"></div>
+
+    <div class="search-bar">
+        <form #search="ngForm" (ngSubmit)="searchVideo(search.value)">
+            <input type="text" ngModel name="searchQuery" placeholder="Search">
+            <button type="submit"><img width="28px" src="../../assets/img/search-icon.png"></button>
+        </form>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="accounts">
+        <a routerLink="/login"><img width="90px" style="border-radius: 50px;" src="../../assets/img/login-icon.jpeg"></a>
+        <a routerLink="/register"><img width="90px" style="border-radius: 50px;" src="../../assets/img/signup-icon.jpeg"></a> 
+    </div>
+</div>
