@@ -51,6 +51,7 @@ export class DataService {
 
   async showVideo(videoDetails : any)
   {
+    await this.router.navigate(['/loading']);
     this.currentVideo = videoDetails;
     this.router.navigate(['/video']);
   }
