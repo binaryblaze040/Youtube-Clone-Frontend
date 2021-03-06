@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { LoadingComponent } from './loading/loading.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ResetEmailComponent } from './reset-email/reset-email.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SearchComponent } from './search/search.component';
 import { UploadComponent } from './upload/upload.component';
 import { VideoComponent } from './video/video.component';
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'loading', component: LoadingComponent },
   { path: 'upload', component: UploadComponent },
   { path: 'editVideo', component: EditVideoComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'resetEmail', component: ResetEmailComponent },
+  { path: 'resetPassword/:email/:otp', component: ResetPasswordComponent }
   
 ];
 

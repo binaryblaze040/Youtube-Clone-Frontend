@@ -18,6 +18,8 @@ import { LoadingComponent } from './loading/loading.component';
 import { UploadComponent } from './upload/upload.component';
 import { EditVideoComponent } from './edit-video/edit-video.component';
 import { SearchComponent } from './search/search.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ResetEmailComponent } from './reset-email/reset-email.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { SearchComponent } from './search/search.component';
     LoadingComponent,
     UploadComponent,
     EditVideoComponent,
-    SearchComponent
+    SearchComponent,
+    ResetPasswordComponent,
+    ResetEmailComponent
   ],
   imports: [
     BrowserModule,

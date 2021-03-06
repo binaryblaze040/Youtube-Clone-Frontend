@@ -57,20 +57,30 @@ export class VideoComponent implements OnInit {
 
   like()
   {
-    this.svc.like(
-      {
-        url : this.video.link
-      }
-    );
+    if(this.activeUser == "")
+      alert("Login with your account to like a video!");
+    else
+    {
+      this.svc.like(
+        {
+          url : this.video.link
+        }
+      );
+    }
   }
 
   dislike()
   {
-    this.svc.dislike(
-      {
-        url : this.video.link
-      }
-    );
+    if(this.activeUser == "")
+      alert("Login with your account to dislike a video!");
+    else
+    {
+      this.svc.dislike(
+        {
+          url : this.video.link
+        }
+      );
+    }
   }
 
   deleteComment(comment: any)

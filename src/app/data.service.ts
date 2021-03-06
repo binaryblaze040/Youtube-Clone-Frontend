@@ -18,6 +18,7 @@ export class DataService {
 
   searchResults : any;
 
+
   constructor(private http : HttpClient, private router : Router) { }
 
   setActiveUser(userEmail : any, userName : any)
@@ -159,6 +160,31 @@ export class DataService {
     return this.http.post(api, data).subscribe( async () => {
       this.router.navigate(['/video']);
     });
+  }
+
+  resetPassword(data : any)
+  {
+    let api = "https://binaryblaze-youtube-clone.herokuapp.com/resetpassword";
+    return this.http.post(api, data).subscribe( () => {
+
+      alert("Reset mail sent to your e-mail id");
+
+    }, () => {
+      
+      alert("Sorry, something went wrong, either the mail id is not valid or maybe there is some internal error");
+    });
+  }
+
+  resetPasswordRequest(data : any)
+  {
+    let api = "https://binaryblaze-youtube-clone.herokuapp.com/resetpasswordrequest";
+    return this.http.post(api, data).subscribe( async () => {
+      await this.router.navigate(['/login']);
+      alert("Password changed sucessfully!");
+    }, () => {
+      alert("Sorry, something went wrong, please try again later");
+    });
+
   }
 
 }

@@ -1,0 +1,28 @@
+<div class="container h-100 body">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <b><h5>RESET PASSWORD</h5></b>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form #resetLink="ngForm" (ngSubmit)="resetPass(resetLink.value)">
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><img class="input-icons" src="../../assets/img/username.png"></span>
+                        </div>
+                        <input type="input" ngModel name="mail" class="form-control" placeholder="Enter you registered email" required>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                        <button type="submit" class="btn login_btn">SEND RESET LINK</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="mt-4">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account? <a routerLink="/register" class="ml-2">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
