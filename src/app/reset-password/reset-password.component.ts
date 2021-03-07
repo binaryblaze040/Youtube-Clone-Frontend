@@ -20,7 +20,7 @@ export class ResetPasswordComponent implements OnInit {
       this.otp = params['otp'];
 
       let resetOTP;
-      http.get("https://localhost:8080/otp").subscribe((otp:any) => {
+      http.get("https://binaryblaze-youtube-clone.herokuapp.com/otp").subscribe((otp:any) => {
         resetOTP = otp.otp
         if(this.otp != resetOTP)
         {
