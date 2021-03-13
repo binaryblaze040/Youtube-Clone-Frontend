@@ -8,23 +8,31 @@
                 <form #edit="ngForm" (ngSubmit)="editVideo(edit.value)">
                     <div class="input-group mb-3">
                         Title : &nbsp;
-                        <input type="text" ngModel name="name" class="form-control input_user" [(ngModel)]="video.name" placeholder="Title" required>
+                        <input type="text" required ngModel name="name" #name="ngModel" class="form-control" [(ngModel)]="video.name" placeholder="Title">
                     </div>
+                    <div class="alert alert-danger" *ngIf="name.touched && !name.valid && name.errors">
+                        <div *ngIf="name.errors.required">Title is required!</div>
+                    </div>
+
                     <div class="input-group mb-3">
                         Description : &nbsp;
-                        <textarea type="text" ngModel name="description" class="form-control input_user" [(ngModel)]="video.description" rows="4" placeholder="Description"></textarea>
+                        <textarea type="text" ngModel name="description" class="form-control" [(ngModel)]="video.description" rows="4" placeholder="Description"></textarea>
                     </div>
                     <div class="input-group mb-2">
                         Tags : &nbsp;
-                        <input type="text" ngModel name="tags" class="form-control input_user" [(ngModel)]="video.tags" placeholder="Tags" required>
+                        <input type="text" ngModel name="tags" class="form-control" [(ngModel)]="video.tags" placeholder="Tags" required>
                     </div>
                     <div class="input-group mb-2">
                         Youtube URL (Read Only) : &nbsp;
-                        <input type="text" ngModel name="link" class="form-control input_user" [(ngModel)]="video.link" placeholder="Youtube URL" readonly>
+                        <input type="text" required pattern="^(https?\:\/\/)?(youtu\.?be)\/.+$" ngModel name="link" #link="ngModel" class="form-control" [(ngModel)]="video.link" placeholder="Youtube URL" readonly>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="link.touched && !link.valid && link.errors">
+                        <div *ngIf="link.errors.required">Youtube URL is required!</div>
+                        <div *ngIf="link.errors.pattern">Invalid Youtube URL!</div>
                     </div>
 
                     <div class="d-flex justify-content-center mt-3 login_container">
-                        <button type="submit" class="btn login_btn">EDIT</button>
+                        <button type="submit" class="btn login_btn" [disabled]="!edit.valid">EDIT</button>
                     </div>
                 </form>
             </div>

@@ -19,8 +19,12 @@
     <br>
     <form class="row" *ngIf="activeUser != ''" #comment="ngForm" (ngSubmit)="addComment(comment.value)">
         <label class="comment-label" for="comment"><h5> {{activeUser}} : </h5></label>
-        <input class="comment" ngModel name="comment" placeholder="write a comment here...">
-        <button type="submit" class="post btn-primary">Post</button>
+        <input class="comment" required ngModel name="comment" #commtext="ngModel" placeholder="write a comment here...">
+
+        <div class="alert alert-danger" *ngIf="commtext.touched && !commtext.valid && commtext.errors">
+            <div *ngIf="commtext.errors.required">Comment is required!</div>
+        </div>
+        <button type="submit" class="post btn-primary" [disabled]="!comment.valid">Post</button>
     </form>
     <br>
     <div class="comments" *ngFor = "let comment of video.comments">

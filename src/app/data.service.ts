@@ -32,6 +32,7 @@ export class DataService {
     this.activeUserEmail = "";
     this.activeUserName = "";
     this.channelVideos = [];
+    this.router.navigate(['/']);
   }
 
   channel()
@@ -60,7 +61,6 @@ export class DataService {
   upload(formData : any)
   { 
     formData.user = this.activeUserEmail;
-    console.log(formData);
 
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/upload";
     this.http.post(api, formData).subscribe(() => {
@@ -99,6 +99,8 @@ export class DataService {
       await this.router.navigate(['/loading']);
       this.searchResults = videos;
       this.router.navigate(['/search']);
+    }, (error) => {
+      alert("Please enter a valid keyword to search!")
     });
   }
 
@@ -125,7 +127,7 @@ export class DataService {
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/comment";
     return this.http.post(api, data).subscribe( async (message) => {
       this.router.navigate(['/video']);
-      alert("Comment Added!");
+      alert("Comment Added! (Your comment will be visible next time when you open this video)");
     });
   }
 
@@ -150,7 +152,7 @@ export class DataService {
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/deleteComment";
     return this.http.post(api, data).subscribe( async () => {
       this.router.navigate(['/video']);
-      alert("Comment Deleted!");
+      alert("Comment Deleted! (Comment will be removed next time when you this video)");
     });
   }
 

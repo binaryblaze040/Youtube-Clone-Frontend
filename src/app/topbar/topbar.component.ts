@@ -8,15 +8,21 @@ import { DataService } from '../data.service';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
-
-  constructor(private svc : DataService, private router : Router) { }
+  constructor(public topbarsvc : DataService, private router : Router) {
+  }
 
   ngOnInit(): void {
+
   }
   
   searchVideo(formData : any)
   {
-    this.svc.search(formData.searchQuery);
+    this.topbarsvc.search(formData.searchQuery);
+  }
+
+  logout()
+  {
+    this.topbarsvc.logout();
   }
 
 }

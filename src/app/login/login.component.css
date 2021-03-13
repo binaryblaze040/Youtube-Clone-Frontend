@@ -1,5 +1,5 @@
 .body {
-    padding-top: 25vh;
+    padding-top: 18vh;
 }
 
 .input-icons {
@@ -12,8 +12,7 @@
 }
 
 .user_card {
-    height: 400px;
-    width: 350px;
+    width: 400px;
     margin-top: auto;
     margin-bottom: auto;
     background: #6d6d6d;
@@ -45,7 +44,7 @@
 }
 
 .form_container {
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
 .login_btn {

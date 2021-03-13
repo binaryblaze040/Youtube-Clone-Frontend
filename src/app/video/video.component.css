@@ -9,7 +9,17 @@
     float: right;
     padding-top: 30px;
     margin: 50px;
-    width: 420px;
+    width: 400px;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .card {
@@ -61,7 +71,7 @@ h4 {
 
 .comment {
     border-radius: 20px;
-    width : 800px;
+    width : 650px;
     padding: 5px;
 }
 

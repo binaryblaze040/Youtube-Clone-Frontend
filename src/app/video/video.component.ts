@@ -12,6 +12,9 @@ export class VideoComponent implements OnInit {
   video : any;
   url : any;
 
+  liked = false;
+  disliked = false;
+
   recommendations : any;
 
   activeUser : any;
@@ -61,11 +64,19 @@ export class VideoComponent implements OnInit {
       alert("Login with your account to like a video!");
     else
     {
-      this.svc.like(
-        {
-          url : this.video.link
-        }
-      );
+      if(this.liked)
+        alert("Already Liked!")
+
+      else
+      {
+        this.video.likes++;
+        this.liked = true;
+        this.svc.like(
+          {
+            url : this.video.link
+          }
+        );
+      }
     }
   }
 
@@ -75,11 +86,19 @@ export class VideoComponent implements OnInit {
       alert("Login with your account to dislike a video!");
     else
     {
-      this.svc.dislike(
-        {
-          url : this.video.link
-        }
-      );
+      if(this.disliked)
+        alert("Already Disliked!")
+
+      else
+      {
+        this.video.dislikes++;
+        this.disliked = true;
+        this.svc.dislike(
+          {
+            url : this.video.link
+          }
+        );
+      }
     }
   }
 

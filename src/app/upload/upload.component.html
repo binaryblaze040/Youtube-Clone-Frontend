@@ -7,24 +7,31 @@
             <div class="d-flex justify-content-center form_container">
                 <form #upload="ngForm" (ngSubmit)="uploadVideo(upload.value)">
                     <div class="input-group mb-3">
-                        <input type="text" ngModel name="name" class="form-control input_user" value=""
-                            placeholder="Video Title">
+                        <input type="text" required ngModel name="name" #name="ngModel" class="form-control input_user" placeholder="Video Title">
                     </div>
+                    <div class="alert alert-danger" *ngIf="name.touched && !name.valid && name.errors">
+                        <div *ngIf="name.errors.required">Title is required!</div>
+                    </div>
+
                     <div class="input-group mb-3">
-                        <textarea type="text" ngModel name="description" class="form-control input_user" value=""
-                            placeholder="Description" rows="4"></textarea>
+                        <textarea type="text" ngModel name="description" class="form-control input_user" placeholder="Description" rows="4">
+                        </textarea>
                     </div>
                     <div class="input-group mb-2">
-                        <input type="text" ngModel name="tags" class="form-control input_user" value="" placeholder="Tags(seperated by comma i.e. ',')">
+                        <input type="text" ngModel name="tags" class="form-control input_user" placeholder="Tags(seperated by comma i.e. ',')">
                     </div>
                     <div class="input-group mb-2">
-                        <input type="text" ngModel name="link" class="form-control input_user" value="" placeholder="Youtube Link">
+                        <input type="text" required pattern="^(https?\:\/\/)?(youtu\.?be)\/.+$" ngModel name="link" #link="ngModel" class="form-control input_user" placeholder="Youtube Link">
                     </div>
-                    
+                    <div class="alert alert-danger" *ngIf="link.touched && !link.valid && link.errors">
+                        <div *ngIf="link.errors.required">Youtube URL is required!</div>
+                        <div *ngIf="link.errors.pattern">Invalid Youtube URL!</div>
+                    </div>
+
                     <p class="error-msg"><b>{{error}}</b></p>
 
                     <div class="d-flex justify-content-center mt-3 login_container">
-                        <button type="submit" class="btn login_btn">UPLOAD</button>
+                        <button type="submit" class="btn login_btn" [disabled]="!upload.valid">UPLOAD</button>
                     </div>
                 </form>
             </div>

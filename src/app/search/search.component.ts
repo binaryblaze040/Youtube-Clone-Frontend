@@ -12,6 +12,8 @@ export class SearchComponent implements OnInit {
 
   constructor(private svc : DataService) {
     this.videos = svc.searchResults;
+    if(this.videos.length==0)
+      alert("No videos Found!");
    }
 
   ngOnInit(): void {

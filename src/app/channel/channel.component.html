@@ -17,7 +17,30 @@
                 <div (click)="getVideo(video)" class="name">{{video.name.substring(0, 70)}}...</div>
 
                 <button (click)="editVideo(video)" class="button"  type="button" class="btn btn-primary">Edit</button>
-                <button (click)="deleteVideo(video)" class="button" type="button" class="btn btn-danger">Delete</button>
+                <button (click)="setcurrentVideoDelete(video)" class="button" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Delete</button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Delete Video</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete "{{currentVideoDelete.name.substr(0, 20)}}..."?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Don't Delete</button>
+                                <button type="button" class="btn btn-danger" (click)="deleteVideo(currentVideoDelete)" data-dismiss="modal">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

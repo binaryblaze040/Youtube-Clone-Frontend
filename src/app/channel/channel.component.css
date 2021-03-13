@@ -19,3 +19,7 @@
 .button {
     padding: 50px;
 }
+
+.modal-content {
+    background-color: rgb(68, 68, 68);
+}

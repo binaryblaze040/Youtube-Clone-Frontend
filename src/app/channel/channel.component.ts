@@ -13,6 +13,7 @@ export class ChannelComponent implements OnInit {
   username;
   userEmail;
   views;
+  currentVideoDelete : any;
   
   constructor(private svc : DataService, private router : Router) {
     this.videos = this.svc.channelVideos;
@@ -24,6 +25,9 @@ export class ChannelComponent implements OnInit {
       viewCount += this.videos[i].views;
 
     this.views = viewCount;
+
+    if(this.videos.length > 0)
+      this.currentVideoDelete = this.videos[0];
   }
 
   ngOnInit(): void {
@@ -38,6 +42,11 @@ export class ChannelComponent implements OnInit {
   {
     this.router.navigate(['/loading']);
     this.svc.editComponent(video);
+  }
+
+  setcurrentVideoDelete(video : any)
+  {
+    this.currentVideoDelete = video;
   }
 
   deleteVideo(video : any)
