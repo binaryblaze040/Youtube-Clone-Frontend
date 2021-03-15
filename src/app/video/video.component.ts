@@ -29,9 +29,15 @@ export class VideoComponent implements OnInit {
     });
 
     // find if a user is logged in
-    this.activeUser = this.svc.activeUserName;
+    if(localStorage.getItem("username") == null)
+      this.activeUser = "";
+    else
+      this.activeUser = localStorage.getItem("username");
 
-    this.activeUserEmail = this.svc.activeUserEmail;
+    if(localStorage.getItem("email") == null)
+      this.activeUserEmail = "";
+    else
+      this.activeUserEmail = localStorage.getItem("email");
 
     // increment views
     this.svc.views({

@@ -9,7 +9,7 @@ import { DataService } from '../data.service';
 })
 export class SidebarComponent implements OnInit {
   isVisible = false;
-  userName = "";
+  userName : any;
   constructor(private svc : DataService, private router : Router) {
   }
 
@@ -19,7 +19,11 @@ export class SidebarComponent implements OnInit {
   toogleBar()
   {
     this.isVisible = !this.isVisible;
-    this.userName = this.svc.activeUserName;
+
+    if(localStorage.getItem("username") == null)
+      this.userName = "";
+    else
+      this.userName = localStorage.getItem("username");
   }
 
   logout()

@@ -15,11 +15,11 @@
     <div class="spacer"></div>
 
     <div class="accounts">
-        <div *ngIf="topbarsvc.activeUserName == ''">
+        <div *ngIf="!topbarsvc.isLoggedIn()">
             <a routerLink="/login"><img width="90px" style="border-radius: 50px;" src="../../assets/img/login-icon.jpeg"></a>
             <a routerLink="/register"><img width="90px" style="border-radius: 50px;" src="../../assets/img/signup-icon.jpeg"></a>
         </div>
-        <div *ngIf="topbarsvc.activeUserName != ''">
+        <div *ngIf="topbarsvc.isLoggedIn()">
             <a (click)="logout()"><img width="120px" style="border-radius: 50px;" src="../../assets/img/logout.jpeg"></a>
         </div>
     </div>

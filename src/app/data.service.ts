@@ -6,9 +6,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class DataService {
-  
-  activeUserEmail = "";
-  activeUserName = "";
 
   channelVideos: any;
 
@@ -23,22 +20,30 @@ export class DataService {
 
   setActiveUser(userEmail : any, userName : any)
   {
-    this.activeUserEmail = userEmail;
-    this.activeUserName = userName;
+    localStorage.setItem("username", userName);
+    localStorage.setItem("email", userEmail);
   }
 
   logout()
   {
-    this.activeUserEmail = "";
-    this.activeUserName = "";
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
     this.channelVideos = [];
     this.router.navigate(['/']);
+  }
+
+  isLoggedIn()
+  {
+    if(localStorage.getItem("email"))
+      return true;
+    else
+      return false;
   }
 
   channel()
   {
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/channel";
-    this.http.post(api, {email : this.activeUserEmail}).subscribe( (data) => {
+    this.http.post(api, {email : localStorage.getItem("email")}).subscribe( (data) => {
       this.channelVideos = data;
       this.router.navigate(['/channel']);
     });
@@ -60,7 +65,7 @@ export class DataService {
 
   upload(formData : any)
   { 
-    formData.user = this.activeUserEmail;
+    formData.user = localStorage.getItem("email");
 
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/upload";
     this.http.post(api, formData).subscribe(() => {
@@ -76,7 +81,7 @@ export class DataService {
 
   editVideo(video : any)
   {
-    video.user = this.activeUserEmail;
+    video.user = localStorage.getItem("email");
 
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/edit";
     this.http.post(api, video).subscribe(() => {
