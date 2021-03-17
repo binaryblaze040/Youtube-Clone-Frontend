@@ -20,7 +20,8 @@
             <a routerLink="/register"><img width="90px" style="border-radius: 50px;" src="../../assets/img/signup-icon.jpeg"></a>
         </div>
         <div *ngIf="topbarsvc.isLoggedIn()">
-            <a (click)="logout()"><img width="120px" style="border-radius: 50px;" src="../../assets/img/logout.jpeg"></a>
+            <a (click)="getChannel()"><img width="90px" style="border-radius: 50px;" src="../../assets/img/channel.jpeg"></a>
+            <a (click)="logout()"><img width="90px" style="border-radius: 50px;" src="../../assets/img/logout.jpeg"></a>
         </div>
     </div>
 </div>

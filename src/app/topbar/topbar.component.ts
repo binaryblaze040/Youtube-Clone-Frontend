@@ -25,4 +25,10 @@ export class TopbarComponent implements OnInit {
     this.topbarsvc.logout();
   }
 
+  getChannel()
+  {
+    this.router.navigate(['/loading']);
+    this.topbarsvc.channel();
+  }
+
 }
