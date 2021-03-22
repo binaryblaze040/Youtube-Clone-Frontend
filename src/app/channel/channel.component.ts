@@ -17,7 +17,7 @@ export class ChannelComponent implements OnInit {
   
   constructor(private svc : DataService, private router : Router) {
     this.videos = this.svc.channelVideos;
-    this.username = localStorage.getItem("userName");
+    this.username = localStorage.getItem("username");
     this.userEmail = localStorage.getItem("email");
 
     let viewCount = 0;

@@ -1,5 +1,8 @@
-.accounts {
-    margin-right: 0px;
+
+@media screen and (max-width: 1024px) {
+    .accounts {
+        display: none !important;
+    }
 }
 
 .logo-name {
