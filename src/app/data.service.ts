@@ -15,13 +15,13 @@ export class DataService {
 
   searchResults : any;
 
-
   constructor(private http : HttpClient, private router : Router) { }
 
-  setActiveUser(userEmail : any, userName : any)
+  setActiveUser(userEmail : any, userName : any, avatar: any)
   {
     localStorage.setItem("username", userName);
     localStorage.setItem("email", userEmail);
+    localStorage.setItem("avatar", avatar);
   }
 
   logout()
@@ -66,6 +66,8 @@ export class DataService {
   upload(formData : any)
   { 
     formData.user = localStorage.getItem("email");
+    formData.channel = localStorage.getItem("username");
+    formData.avatar = localStorage.getItem("avatar");
 
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/upload";
     this.http.post(api, formData).subscribe(() => {
@@ -97,14 +99,14 @@ export class DataService {
     });
   }
 
-  search(query : any)
+  async search(query : any)
   {
     let api = "https://binaryblaze-youtube-clone.herokuapp.com/search";
     this.http.post(api, {query : query}).subscribe( async (videos) => {
       await this.router.navigate(['/loading']);
       this.searchResults = videos;
       this.router.navigate(['/search']);
-    }, (error) => {
+    }, () => {
       alert("Please enter a valid keyword to search!")
     });
   }

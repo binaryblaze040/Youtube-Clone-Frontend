@@ -41,6 +41,7 @@ nav a {
     text-decoration:none;
     padding:10px;
     text-align: center;
+    cursor: pointer;
 }
 
 nav a:hover {

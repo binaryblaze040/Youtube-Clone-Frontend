@@ -34,7 +34,6 @@ export class SidebarComponent implements OnInit {
 
   getChannel()
   {
-    this.router.navigate(['/loading']);
     this.svc.channel();
     this.toogleBar();
   }

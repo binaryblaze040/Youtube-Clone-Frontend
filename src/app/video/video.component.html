@@ -1,6 +1,6 @@
 <div class="row">
 <div class="video-player">
-    <iframe width="900" height="506" [src]="url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="yt-player" [src]="url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     <h5 class="title"> {{video.name}} </h5>
     <div class="video-details">
         <div class="line views"> {{video.views}} views</div>
@@ -11,7 +11,7 @@
         </div> 
     </div>
     <br>
-    <div class="channel">{{video.user}}</div>
+    <div class="channel"><img src={{video.avatar}} class="channel-img">{{video.channel}}</div>
     <br>
     <div class="comments-title">Description : {{video.description}} </div>
     <br>
@@ -39,8 +39,16 @@
     <h4>Recommendations :</h4>
     <div class="col">
         <div class="card" *ngFor="let r of recommendations">
-            <img (click)="getVideo(r)" [src]="'https://img.youtube.com/vi/' + r.id +'/hqdefault.jpg'">
-            <div (click)="getVideo(r)" class="name">{{r.name.substring(0, 70)}}...</div>
+            <img (click)="getVideo(r)" [src]="'https://img.youtube.com/vi/' + r.id +'/mqdefault.jpg'">
+
+            <b class="recommendation-title">{{r.name.substring(0, 70)}}<b *ngIf="r.name.length > 50">...</b></b>            
+
+            <div>
+                <b class="recommendation-channel"><img src={{r.avatar}} class="channel-img-recom">{{r.channel}}</b>
+                <b class="recommendation-views">{{r.views}} Views</b>
+            </div>
+
+            <!-- <div (click)="getVideo(r)" class="name">{{r.name.substring(0, 70)}}...</div> -->
         </div>
     </div>
 </div>

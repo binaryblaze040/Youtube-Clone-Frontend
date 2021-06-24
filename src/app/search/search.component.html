@@ -2,9 +2,15 @@
 
     <div class="col-lg-3 col-md-6 mb-2" *ngFor='let video of videos'>
         <div class="card" (click)="getVideo(video)">
-            <img [src]="'https://img.youtube.com/vi/' + video.id +'/hqdefault.jpg'">
-            <div class="name">{{video.name.substring(0, 70)}}...</div>
+            <img class="thumbnail" [src]="'https://img.youtube.com/vi/' + video.id +'/mqdefault.jpg'">
+            <div class="name">
+                <b>{{video.name.substring(0, 50)}}</b>
+                <b *ngIf="video.name.length > 50">...</b>
+            </div>
+            <div class="channel">
+                <b><img class="channel-img" src={{video.avatar}}> {{video.channel}}</b>
+                <b class="views">{{video.views}} Views</b>
+            </div>
         </div>
     </div>
-
 </div>

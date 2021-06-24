@@ -27,7 +27,6 @@ export class TopbarComponent implements OnInit {
 
   getChannel()
   {
-    this.router.navigate(['/loading']);
     this.topbarsvc.channel();
   }
 

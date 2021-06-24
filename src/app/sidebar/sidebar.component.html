@@ -1,7 +1,7 @@
-<img class="options" width="40" (click)="toogleBar()" src="../../assets/img/options.png"> 
+<img class="options" width="40" (click)="toogleBar()" style="cursor: pointer;" src="../../assets/img/options.png"> 
 <div class="container">
     <aside *ngIf="isVisible">
-        <h3>OPTIONS  <img style="float:right;" width="30" (click)="toogleBar()" src="../../assets/img/close.png"></h3>
+        <h3>OPTIONS  <img style="float:right;" width="20" (click)="toogleBar()" src="../../assets/img/close.png"></h3>
         <nav>
             <a routerLink="/" (click)="toogleBar()">HOME</a>
             <div *ngIf="userName == ''">

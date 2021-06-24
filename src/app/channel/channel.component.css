@@ -23,3 +23,8 @@
 .modal-content {
     background-color: rgb(68, 68, 68);
 }
+
+.channel-img {
+    border-radius: 100%;
+    width: 100px;
+}

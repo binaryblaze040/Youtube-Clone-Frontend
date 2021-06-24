@@ -14,12 +14,12 @@ import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ChannelComponent } from './channel/channel.component';
-import { LoadingComponent } from './loading/loading.component';
 import { UploadComponent } from './upload/upload.component';
 import { EditVideoComponent } from './edit-video/edit-video.component';
 import { SearchComponent } from './search/search.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ResetEmailComponent } from './reset-email/reset-email.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -33,12 +33,12 @@ import { ResetEmailComponent } from './reset-email/reset-email.component';
     VideoComponent,
     SidebarComponent,
     ChannelComponent,
-    LoadingComponent,
     UploadComponent,
     EditVideoComponent,
     SearchComponent,
     ResetPasswordComponent,
-    ResetEmailComponent
+    ResetEmailComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

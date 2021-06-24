@@ -15,7 +15,7 @@
                         </div>
                         <input type="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel name="email" #email="ngModel" class="form-control input_user" placeholder="e-mail">
                     </div>
-                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid && email.errors">
+                    <div class="error-msg" *ngIf="email.touched && !email.valid && email.errors">
                         <div *ngIf="email.errors.required">Email Id is required!</div>
                         <div *ngIf="email.errors.pattern">Invalid Email!</div>
                     </div>
@@ -26,7 +26,7 @@
                         </div>
                         <input type="password" required minlength="4" maxlength="20" ngModel name="password" #pass="ngModel" class="form-control input_pass" placeholder="password" required>
                     </div>
-                    <div class="alert alert-danger" *ngIf="pass.touched && !pass.valid && pass.errors">
+                    <div class="error-msg" *ngIf="pass.touched && !pass.valid && pass.errors">
                         <div *ngIf="pass.errors.required">Password is required!</div>
                         <div *ngIf="pass.errors.minlength">Password length must be more than 3 characters!</div>
                         <div *ngIf="pass.errors.maxlength">Password length must be less than or equal to 20 characters!</div>

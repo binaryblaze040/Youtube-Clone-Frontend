@@ -20,7 +20,6 @@ export class EditVideoComponent implements OnInit {
 
   editVideo(formData : any)
   {
-    this.router.navigate(['/loading']);
     this.svc.editVideo(formData);
   }
 

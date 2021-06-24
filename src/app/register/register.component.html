@@ -12,12 +12,12 @@
                         <input type="text" required ngModel name="fname" #fname="ngModel" class="form-control input_user" placeholder="firstname" required>
                         <input type="text" ngModel name="lname" class="form-control input_user" placeholder="lastname">
                     </div>
-                    <div class="alert alert-danger" *ngIf="fname.touched && !fname.valid">First Name is required!</div>
+                    <div class="error-msg" *ngIf="fname.touched && !fname.valid">First Name is required!</div>
 
                     <div class="input-group mb-3">
                         <input type="text" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel name="email" #email="ngModel" class="form-control input_user" placeholder="e-mail" required>
                     </div>
-                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid && email.errors">
+                    <div class="error-msg" *ngIf="email.touched && !email.valid && email.errors">
                         <div *ngIf="email.errors.required">Email Id is required!</div>
                         <div *ngIf="email.errors.pattern">Invalid Email!</div>
                     </div>
@@ -25,16 +25,26 @@
                     <div class="input-group mb-2">
                         <input type="password" required minlength="4" maxlength="20" ngModel name="password" #pass="ngModel" class="form-control input_pass" placeholder="password" required>
                     </div>
-                    <div class="alert alert-danger" *ngIf="pass.touched && !pass.valid && pass.errors">
+                    <div class="error-msg" *ngIf="pass.touched && !pass.valid && pass.errors">
                         <div *ngIf="pass.errors.required">Password is required!</div>
                         <div *ngIf="pass.errors.minlength">Password length must be more than 3 characters!</div>
                         <div *ngIf="pass.errors.maxlength">Password length must be less than or equal to 20 characters!</div>
                     </div>
 
-                    <p class="error-msg"><b>{{error}}</b></p>
+                    <div class="channel-image">
+                        Channel Avatar:
+                        <input class="file-input" (change)="avatarUpload($event.target)" pattern="^.*\.(jpg|JPG|jpeg|JPEG|png|PNG)$" ngModel name="avatar" #avatar="ngModel" type="file">
+                    </div>
+                    <div class="server-error" *ngIf="fileSize > maxFileSize">Document should be less than {{maxFileSize/1000000}}MB</div>
+                    <div class="server-error" *ngIf="avatar.touched && !avatar.valid && avatar.errors">
+                        <div *ngIf="avatar.errors.pattern">Only .pdf, .jpg, .png, .jpeg formats are supported!</div>
+                    </div>
+
+                    <p class="server-error"><b>{{error}}</b></p>
+                    <!-- <img [src]="byteContent" width="250px"> -->
 
                     <div class="d-flex justify-content-center mt-3 login_container">
-                    <button type="submit" class="btn login_btn" [disabled]="!register.valid">SIGN UP</button>
+                    <button type="submit" class="btn login_btn" [disabled]="!register.valid || fileSize > maxFileSize">SIGN UP</button>
                </div>
                 </form>
             </div>

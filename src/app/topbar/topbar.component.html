@@ -1,9 +1,10 @@
 <div class="toolbar" role="banner">
-    <img width="40">
-    <img width="35" alt="YouTube Logo" routerLink="/" src="../../assets/img/youtube-icon.png" />
-    <span class="logo-name" routerLink="/">YouTube</span>
+    <div class="logo">
+        <img width="35" alt="YouTube Logo" routerLink="/" style="cursor: pointer;" src="../../assets/img/youtube-icon.png" />
+        <span class="logo-name" style="cursor: pointer;" routerLink="/">YouTube</span>
+    </div>
     
-    <div class="spacer"></div>
+    <div class="spacer"></div>  
 
     <div class="search-bar">
         <form #search="ngForm" (ngSubmit)="searchVideo(search.value)">
@@ -16,12 +17,20 @@
 
     <div class="accounts">
         <div *ngIf="!topbarsvc.isLoggedIn()">
-            <a routerLink="/login"><img width="90px" style="border-radius: 50px;" src="../../assets/img/login-icon.jpeg"></a>
-            <a routerLink="/register"><img width="90px" style="border-radius: 50px;" src="../../assets/img/signup-icon.jpeg"></a>
+            <a routerLink="/login"><img width="90px" class="account-btn" src="../../assets/img/login-icon.jpeg"></a>
+            <a routerLink="/register"><img width="90px" class="account-btn" src="../../assets/img/signup-icon.jpeg"></a>
         </div>
         <div *ngIf="topbarsvc.isLoggedIn()">
-            <a (click)="getChannel()"><img width="90px" style="border-radius: 50px;" src="../../assets/img/channel.jpeg"></a>
-            <a (click)="logout()"><img width="90px" style="border-radius: 50px;" src="../../assets/img/logout.jpeg"></a>
+            <a (click)="getChannel()"><img width="90px" class="account-btn" src="../../assets/img/channel.jpeg"></a>
+            <a (click)="logout()"><img width="90px" class="account-btn" src="../../assets/img/logout.jpeg"></a>
         </div>
     </div>
+
+</div>
+
+<div class="search-bar-mob">
+    <form #searchm="ngForm" (ngSubmit)="searchVideo(searchm.value)">
+        <input type="text" ngModel name="searchQuery" placeholder="Search">
+        <button class="button-mob" type="submit"><img width="28px" src="../../assets/img/search-icon.png"></button>
+    </form>
 </div>

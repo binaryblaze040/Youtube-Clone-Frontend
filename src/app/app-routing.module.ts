@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChannelComponent } from './channel/channel.component';
 import { EditVideoComponent } from './edit-video/edit-video.component';
 import { HomeComponent } from './home/home.component';
-import { LoadingComponent } from './loading/loading.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetEmailComponent } from './reset-email/reset-email.component';
@@ -11,6 +10,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { SearchComponent } from './search/search.component';
 import { UploadComponent } from './upload/upload.component';
 import { VideoComponent } from './video/video.component';
+import { LoadingComponent } from './loading/loading.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

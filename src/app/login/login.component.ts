@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit {
   {
     
     this.svc.login(formData).subscribe( (status:any) => {
-      this.router.navigate(['/loading']);
+      // console.log(status);
       this.router.navigate(['/']);
-      this.svc.setActiveUser(status.email, status.name);
+      this.svc.setActiveUser(status.email, status.name, status.avatar);
     }, (err) => {
 
       if(err.status == 401)

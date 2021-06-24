@@ -18,3 +18,34 @@ img {
     margin-right: 0px;
     margin-left: 0px;
 }
+
+.card {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 12%;
+}
+
+.thumbnail {
+    height: fit-content;
+}
+
+.channel {
+    color: rgb(129, 129, 129);
+}
+
+.name {
+    max-height: 65px;
+    height: auto;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2%;
+}
+
+.views {
+    float: right;
+}
+
+.channel-img {
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+}

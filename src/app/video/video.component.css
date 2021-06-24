@@ -5,6 +5,11 @@
     float: left;
 }
 
+.yt-player {
+    width: 900px;
+    height: 506px;
+}
+
 .recommendation {
     float: right;
     padding-top: 30px;
@@ -23,7 +28,21 @@
 }
 
 .card {
-    margin-bottom: 10px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+b {
+    font-size: small;
+    color: rgb(255, 255, 255);
+}
+
+.channel {
+    color: rgb(129, 0, 0);
+    padding-right: 2%;
+    margin-bottom: 30px;
+    font-size: 30px;
 }
 
 h4 {
@@ -39,10 +58,15 @@ h4 {
     float: right;
 }
 
-.channel {
-    color: floralwhite;
-    font-size: x-large;
-    color: rgb(204, 31, 0);
+.recommendation-channel {
+    color: rgb(153, 153, 153);
+    font-size: 16px;
+}
+
+.recommendation-views {
+    color: rgb(153, 153, 153);
+    float: right;
+    font-size: 16px;
 }
 
 .comments-title {
@@ -69,6 +93,11 @@ h4 {
     width: 900px;
 }
 
+.recommendation-title {
+    font-size: 16px;
+    padding-bottom: 2%;
+}
+
 .comment {
     border-radius: 20px;
     width : 650px;
@@ -86,4 +115,18 @@ h4 {
 
 .post {
     border-radius: 5px;
+}
+
+.channel-img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.channel-img-recom {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
 }

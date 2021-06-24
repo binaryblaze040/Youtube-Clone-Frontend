@@ -13,12 +13,14 @@ export class ChannelComponent implements OnInit {
   username;
   userEmail;
   views;
+  avatar;
   currentVideoDelete : any;
   
   constructor(private svc : DataService, private router : Router) {
     this.videos = this.svc.channelVideos;
     this.username = localStorage.getItem("username");
     this.userEmail = localStorage.getItem("email");
+    this.avatar = localStorage.getItem("avatar")
 
     let viewCount = 0;
     for(let i=0; i<this.videos.length; i++)
@@ -40,7 +42,6 @@ export class ChannelComponent implements OnInit {
 
   editVideo(video : any)
   {
-    this.router.navigate(['/loading']);
     this.svc.editComponent(video);
   }
 
@@ -51,7 +52,6 @@ export class ChannelComponent implements OnInit {
 
   deleteVideo(video : any)
   {
-    this.router.navigate(['/loading']);
     this.svc.deleteVideo(video);
   }
 
